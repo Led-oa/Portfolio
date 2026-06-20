@@ -1,33 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Times New Roman', Times, serif;
-    background-color: #FFFADC;
+    overflow-x: hidden;
+    background-color: bisque;
     color: #98CD00;
     margin: 0;
     padding: 0;
 }
 
-/* Style pour la barre de navigation */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 header {
-    margin: auto;
-    padding: auto;
+    z-index: 2;
+    margin: 10px;
+    padding: 15px;
     display: flex;
     justify-content: center;
 }
 
 .nav_bar {
-    display: flex;
-    justify-content: space-evenly;
     width: 75%;
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    align-items: center;
+}
+
+
+.nav_menu {
+    display: flex;
+    gap: 30px;
+        display: flex;
+    justify-content: space-evenly;
 }
 
 .nav_link {
-    position: relative;
-    text-decoration: none;
+    font-size: larger;
+    font-weight: bold;
     color: #98CD00;
-    font-size: 18px;
-    padding: 5px;
-    margin: 25px;
-    /* border: solid red; */
+    text-decoration: none;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    margin: 4px;
+    background: #98CD00;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 7px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(8px, -7px);
+}
+
+@media screen and (max-width:768px) {
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav_menu {
+        position: fixed;
+        z-index: 4;
+        top: 80px;
+        right: -100%;
+        width: 100%;
+        background: green;
+        border: solid red;
+        border-radius: 25px;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding: 40px 0;
+        transition: 0.4s;
+    }
+
+    .nav_menu.active {
+        right: 0;
+    }
+
 }
 
 /* Style pour la main page */
@@ -43,6 +122,15 @@ main {
 
 section {
     overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.section_home,
+.section_skill,
+.section_projects,
+.section_contacts {
+    z-index: 2;
+    position: relative;
 }
 
 .section_home {
@@ -56,10 +144,9 @@ section {
     width: 95%;
     justify-content: center;
     border-radius: 25px;
-    /* box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); */
+
 }
 
-/* ========== TITLE ========== */
 .home_title {
     text-align: center;
     width: 100%;
@@ -69,7 +156,6 @@ section {
     position: relative;
 }
 
-/* Optional decorative line under title */
 .home_title::after {
     content: '';
     display: block;
@@ -80,7 +166,6 @@ section {
     border-radius: 2px;
 }
 
-/* ========== MAIN CONTAINER (Photo + Description) ========== */
 .home_container {
     display: flex;
     justify-content: center;
@@ -92,7 +177,6 @@ section {
     /* Stack on small screens */
 }
 
-/* ========== PHOTO SIDE ========== */
 .home_pdp_container {
     flex: 0 0 auto;
 }
@@ -120,7 +204,6 @@ section {
     display: block;
 }
 
-/* ========== DESCRIPTION SIDE ========== */
 .home_desc_container {
     flex: 1;
     min-width: 300px;
@@ -141,7 +224,6 @@ section {
     margin: 0 0 1.5rem 0;
 }
 
-/* ========== BUTTONS ========== */
 .home_buttons {
     display: flex;
     gap: 1rem;
@@ -186,10 +268,10 @@ section {
     box-shadow: 0 5px 15px rgba(44, 62, 80, 0.3);
 }
 
-/* ========== RESPONSIVE (Mobile) ========== */
-@media (max-width: 700px) {
+@media screen and (max-width:768px) {
+
     .section_home {
-        padding: 2.5rem 1rem;
+        padding: 2rem 1rem;
     }
 
     .home_container {
@@ -199,21 +281,23 @@ section {
     }
 
     .home_desc_container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        max-width: 100%;
+        min-width: auto;
+    }
+
+    .home_desc_container h4 {
+        font-size: 1.5rem;
+    }
+
+    .home_desc_container p {
+        font-size: 1rem;
     }
 
     .home_buttons {
         justify-content: center;
     }
 
-    .pdp_wrapper {
-        width: 180px;
-        height: 180px;
-    }
 }
-
 
 .section_skill {
     display: flex;
@@ -223,13 +307,10 @@ section {
     min-height: 80vh;
     margin: 3rem auto;
     padding: 2.5rem 2rem;
-    /* border: solid #98CD00; */
     border-radius: 25px;
-    /* background-color: #fff; */
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+
 }
 
-/* ========== TITLE ========== */
 .skill_title {
     font-size: 2.2rem;
     color: #2c3e50;
@@ -248,7 +329,6 @@ section {
     border-radius: 2px;
 }
 
-/* ========== SKILLS CONTAINER (3 columns) ========== */
 .skill_container {
     display: flex;
     justify-content: center;
@@ -257,7 +337,6 @@ section {
     flex-wrap: wrap;
 }
 
-/* ========== INDIVIDUAL SKILL CARD ========== */
 .skill_one,
 .skill_two,
 .skill_three {
@@ -297,7 +376,6 @@ section {
     background: linear-gradient(90deg, #e67e22, #d35400);
 }
 
-/* Hover effect */
 .skill_one:hover,
 .skill_two:hover,
 .skill_three:hover {
@@ -306,7 +384,6 @@ section {
     border-color: transparent;
 }
 
-/* ========== CARD HEADINGS ========== */
 .skill_one h4,
 .skill_two h4,
 .skill_three h4 {
@@ -333,7 +410,6 @@ section {
     content: '🛠️';
 }
 
-/* ========== SKILL LIST ========== */
 .skill_one ul,
 .skill_two ul,
 .skill_three ul {
@@ -385,7 +461,6 @@ section {
     font-weight: bold;
 }
 
-/* Hover on list items */
 .skill_one li:hover,
 .skill_two li:hover,
 .skill_three li:hover {
@@ -393,26 +468,20 @@ section {
     color: #2c3e50;
 }
 
-/* ========== RESPONSIVE ========== */
-@media (max-width: 768px) {
-    .section_skill {
-        width: 95%;
-        padding: 1.5rem 1rem;
-        min-height: auto;
-    }
+@media screen and (max-width:768px) {
 
     .skill_container {
         flex-direction: column;
         align-items: center;
-        gap: 1.5rem;
     }
 
     .skill_one,
     .skill_two,
     .skill_three {
         width: 100%;
-        max-width: 400px;
+        max-width: 100%;
     }
+
 }
 
 .section_projects {
@@ -423,12 +492,10 @@ section {
     min-height: 80vh;
     margin: 3rem auto;
     padding: 2.5rem 2rem;
-    /* border: 2px solid #98CD00; */
     border-radius: 25px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+
 }
 
-/* ========== TITLE ========== */
 .project_title {
     font-size: 2.2rem;
     color: #2c3e50;
@@ -581,7 +648,7 @@ section {
     /* border: 2px solid #98CD00; */
     border-radius: 25px;
     /* background-color: #fff; */
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+
 }
 
 /* ========== TITLE ========== */
@@ -721,7 +788,10 @@ section {
 }
 
 .social_link {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
     padding: 0.6rem 1.2rem;
     border-radius: 25px;
     text-decoration: none;
@@ -742,26 +812,23 @@ section {
     box-shadow: 0 4px 12px rgba(36, 41, 46, 0.3);
 }
 
-.social_link.linkedin {
-    background: #0077b5;
+.social_link.whatsapp {
+    background: #00b55b;
     color: #fff;
 }
 
-.social_link.linkedin:hover {
-    background: #006399;
+.social_link.whatsapp:hover {
+    background: #00994d;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 119, 181, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 181, 30, 0.3);
 }
 
-.social_link.twitter {
-    background: #1da1f2;
-    color: #fff;
-}
 
-.social_link.twitter:hover {
-    background: #1991db;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(29, 161, 242, 0.3);
+.contact_icon {
+    margin: 0;
+    padding: 0;
+    width: 10px;
+    height: 27px;
 }
 
 /* ========== RIGHT COLUMN: FORM ========== */
@@ -900,4 +967,21 @@ section {
     .social_link {
         text-align: center;
     }
+}
+
+@media screen and (max-width:768px) {
+
+    section {
+        width: 95%;
+    }
+
+    .section_home,
+    .section_skill,
+    .section_projects,
+    .section_contacts {
+        padding: 1.5rem 1rem;
+        margin: 1.5rem auto;
+        min-height: auto;
+    }
+
 }

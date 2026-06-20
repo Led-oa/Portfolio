@@ -12,10 +12,23 @@
 <body>
     <header>
         <nav class="nav_bar">
-            <a href="#whoiam" class="nav_link">Who I Am</a>
-            <a href="#myskills" class="nav_link">My Skills</a>
-            <a href="#myprojects" class="nav_link">My Projects</a>
-            <a href="#contacts" class="nav_link">Contacts</a>
+
+
+            <!-- Bouton hamburger -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Menu -->
+            <div class="nav_menu">
+                <a href="#whoiam" class="nav_link">Who I Am</a>
+                <a href="#myskills" class="nav_link">My Skills</a>
+                <a href="#myprojects" class="nav_link">My Projects</a>
+                <a href="#contacts" class="nav_link">Contacts</a>
+            </div>
+
         </nav>
     </header>
     <main>
@@ -31,8 +44,8 @@
                     <h4>Hello friend, Gaël here,</h4>
                     <p>
                         I am a developer who like to code for fun and to create game. I am mainly do web and software
-                        developpement but I am now try a bit of game developement, though i am beginner ... <br>
-                        If you have some project you wanna build and need a developer to build do it, contact me.
+                        developpement but I am trying a bit of game developement, though i am beginner ... <br>
+                        If you have some project you wanna build and need a developer to do it, contact me.
                     </p>
                     <div class="home_buttons">
                         <a href="#" class="btn primary">Contact</a>
@@ -80,6 +93,7 @@
             <h3 class="project_title"> My Projects</h3>
             <div class="project_container" id="projects">
                 <!-- Les projets vont apparaître ici -->
+
             </div>
         </section>
         <section id="contacts" class="section_contacts">
@@ -117,8 +131,7 @@
                             <div>
                                 <p class="contact_label">Téléphone</p>
                                 <a href="tel:+261322626369">+261 32 26 263 69</a><br>
-                                <br>
-                                <a href="tel:+261340000000">+261 38 90 808 17</a>
+
                             </div>
                         </div>
 
@@ -151,15 +164,15 @@
                         <div class="social_links">
                             <a href="https://github.com/Led-oa" target="_blank" class="social_link github"
                                 aria-label="GitHub">
-                                <span>🐙 GitHub</span>
+                                <img src="./assets/icons/github.png" alt="" class="contact_icon">
+                                <span>
+                                    GitHub
+                                </span>
                             </a>
-                            <a href="+261322626369" target="_blank" class="social_link WhatsApp"
-                                aria-label="WhatsApp">
-                                <span>💼 WhatsApp</span>
-                            </a>
-                            <a href="https://twitter.com/ledoagael" target="_blank" class="social_link twitter"
-                                aria-label="Twitter">
-                                <span>🐦 Twitter</span>
+                            <a href="+261322626369" target="_blank" class="social_link whatsapp" aria-label="WhatsApp">
+                                <img src="./assets/icons/whatsapp.png" alt="" class="contact_icon">
+                                <span>
+                                    WhatsApp</span>
                             </a>
                         </div>
                     </div>
