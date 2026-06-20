@@ -16,11 +16,48 @@ body {
     color: #98CD00;
     margin: 0;
     padding: 0;
+    border: solid red;
 }
 
 img {
     max-width: 100%;
     height: auto;
+}
+
+.btn_up {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #98CD00;
+    color: white;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .2);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all .3s ease;
+
+    z-index: 1000;
+}
+
+.btn_up:hover {
+    background-color: #014f7f;
+    color: white;
+}
+
+.btn_up.show {
+    opacity: 1;
+    visibility: visible;
 }
 
 header {

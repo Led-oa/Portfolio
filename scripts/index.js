@@ -49,6 +49,27 @@ navLinks.forEach((link) => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
+  const btnUp = document.querySelector(".btn_up");
+
+  // Afficher le bouton après 300px de scroll
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) {
+      btnUp.classList.add("show");
+    } else {
+      btnUp.classList.remove("show");
+    }
+  });
+
+  // Remonter en haut
+  btnUp.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav_menu");
   const navBar = document.querySelector(".nav_bar");
