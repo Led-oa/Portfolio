@@ -43,7 +43,7 @@ header {
 .nav_menu {
     display: flex;
     gap: 30px;
-        display: flex;
+    display: flex;
     justify-content: space-evenly;
 }
 
@@ -89,12 +89,12 @@ header {
 
     .nav_menu {
         position: fixed;
-        z-index: 4;
+        z-index: 3;
         top: 80px;
         right: -100%;
         width: 100%;
-        background: green;
-        border: solid red;
+        background: bisque;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
         border-radius: 25px;
         flex-direction: column;
         align-items: center;
@@ -129,7 +129,7 @@ section {
 .section_skill,
 .section_projects,
 .section_contacts {
-    z-index: 2;
+    z-index: 1;
     position: relative;
 }
 
